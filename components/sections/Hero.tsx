@@ -5,9 +5,9 @@ import { motion } from 'framer-motion'
 
 const TERMINAL_LINES = [
   { text: 'Hi there,', delay: 0 },
-  { text: "I'm Devasya G", delay: 400, accent: true },
+  { text: "I'm Devasya Gupta", delay: 400, accent: true },
   { text: '', delay: 800 },
-  { text: '• ML Engineer', delay: 900 },
+  { text: '• AI-ML Engineer', delay: 900 },
   { text: '• Full-Stack Developer', delay: 1100 },
   { text: '• CS @ GLS University', delay: 1300 },
   { text: '', delay: 1500 },
