@@ -1,218 +1,115 @@
-# Devasya Gupta — Portfolio v2.0
+# Devasya Gupta — Personal Portfolio
 
-**Chromatic Glassmorphism × edh.dev Layout**
+[![Live Site](https://img.shields.io/badge/Live-devasyagupta.vercel.app-1a56db?style=flat-square)](https://devasyagupta.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-devasyagupta-0f0f0f?style=flat-square&logo=github)](https://github.com/devasyagupta)
 
-> "The editorial structure and pixel-font brutalism of edh.dev, painted in deep space dark with iridescent glass and chromatic light."
+Personal portfolio website for **Devasya Gupta** — CS undergraduate at GLS University, Ahmedabad (B.Tech 2023–2027), specializing in ML/AI and full-stack development.
 
 ---
 
-## ✦ Tech Stack
+## Preview
+
+A fully self-contained single HTML file portfolio with:
+
+- **Three.js wireframe globe** — low-poly icosphere with triangulated edges, glowing accent nodes, latitude/longitude rings, Earth-axial tilt, and mouse parallax
+- **Magazine-style layout** — asymmetric project cards with overlapping image/text columns
+- **11 scroll animations** — blur-fade reveals, heading wipes, image desaturate-zoom, word-by-word text, tag pill stagger, cert fan-in, project side-slides, separator line draws, scroll progress bar
+- **edh.dev layout DNA** — fixed left icon sidebar, fixed bottom-right text nav, top metadata bar
+
+---
+
+## Stack
 
 | Layer | Choice |
 |-------|--------|
-| Framework | Next.js 14 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS v3 + CSS custom properties |
-| Scroll Animations | GSAP 3 + ScrollTrigger |
-| UI Microinteractions | Framer Motion |
-| 3D Background | React Three Fiber (R3F) |
-| Display Font | VT323 (Google Fonts) |
-| Body Font | IBM Plex Mono |
-| Deployment | Vercel |
+| Structure | Single HTML file (no build step) |
+| 3D | Three.js r128 (CDN) |
+| Fonts | Instrument Serif + IBM Plex Mono (Google Fonts) |
+| Animations | CSS transitions + IntersectionObserver |
+| Deployment | Vercel / Netlify (static) |
 
 ---
 
-## 🗂 Project Structure
+## Sections
 
-```
-devasya-portfolio/
-├── app/
-│   ├── layout.tsx          # Root: fonts, metadata, JSON-LD
-│   ├── page.tsx            # Main page — all sections assembled
-│   └── globals.css         # Full CSS design token system
-├── components/
-│   ├── ui/
-│   │   ├── GlassCard.tsx   # Reusable glass surface
-│   │   ├── TagPill.tsx     # Dashed-border tag pill (edh.dev style)
-│   │   ├── SectionBadge.tsx # VT323 heading in glass badge
-│   │   ├── SectionSep.tsx  # Dashed horizontal separator
-│   │   └── GlowButton.tsx  # CTA button with glow
-│   ├── sections/
-│   │   ├── Hero.tsx        # Full-viewport terminal glass hero
-│   │   ├── About.tsx       # Bio + photo + tech stack
-│   │   ├── Certifications.tsx
-│   │   ├── Experience.tsx  # GSAP timeline animation
-│   │   ├── Projects.tsx    # edh.dev full-width stacked cards
-│   │   └── Contact.tsx     # Email copy + links + footer
-│   ├── layout/
-│   │   ├── LeftSidebar.tsx # Fixed 5-icon glass sidebar
-│   │   ├── RightNav.tsx    # Fixed bottom-right text nav
-│   │   ├── TopMetaBar.tsx  # Fixed top-right GitHub metadata
-│   │   └── MobileMenu.tsx  # Full-screen glass overlay
-│   └── three/
-│       └── BackgroundOrbs.tsx  # R3F ambient orbs scene
-├── lib/
-│   ├── data.ts             # ALL content — single source of truth
-│   ├── animations.ts       # GSAP preset configs
-│   └── github.ts           # GitHub API utility
-├── types/
-│   └── index.ts            # TypeScript interfaces
-└── public/
-    ├── photo.jpg           # ← ADD YOUR PHOTO HERE
-    └── resume-devasya-gupta.pdf  # ← ADD YOUR RESUME HERE
-```
+- **Hero** — Full-viewport Three.js wireframe globe
+- **About** — Bio, technologies grid, skill tags
+- **Certifications** — Google AI, JP Morgan, McKinsey + category credit tables
+- **Experience** — Metrix Healthcare India internship with animated timeline
+- **Projects** — 5 projects with real screenshots, repo links, tag pills
+- **Contact** — Clipboard email copy, GitHub, LinkedIn, embedded resume download
 
 ---
 
-## 🚀 Local Development
+## Projects
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn or pnpm
+| # | Project | Repo | Stack |
+|---|---------|------|-------|
+| 1 | **HireLoop** | [devasyagupta/HireLoop](https://github.com/devasyagupta/HireLoop) | Python, NLP, TF-IDF, scikit-learn, JS |
+| 2 | **Fake News Detection System** | [devasyagupta/FakeNews-Detection](https://github.com/devasyagupta/FakeNews-Detection) | Python, scikit-learn, NLP, Pandas |
+| 3 | **Satellite Image Classification** | [devasyagupta/Satellite](https://github.com/devasyagupta/Satellite) | Python, TensorFlow, CNN, Streamlit |
+| 4 | **Restaurant Recommendation System** | [devasyagupta/Restaurant-recommender](https://github.com/devasyagupta/Restaurant-recommender) | Python, scikit-learn, TF-IDF, Pandas |
+| 5 | **This Portfolio** | [devasyagupta/portfolio](https://github.com/devasyagupta/portfolio) | Three.js, HTML, CSS, JS |
 
-### Setup
+---
+
+## Running Locally
+
+No build step needed — just open the file:
 
 ```bash
-# 1. Clone / copy project files into a new directory
-mkdir devasya-portfolio && cd devasya-portfolio
+# Clone the repo
+git clone https://github.com/devasyagupta/portfolio.git
+cd portfolio
 
-# 2. Copy all project files into this directory
-
-# 3. Install dependencies
-npm install
-
-# 4. Run the development server
-npm run dev
-
-# 5. Open in browser
-open http://localhost:3000
+# Open directly in browser
+open portfolio-v4.html
+# or on Linux:
+xdg-open portfolio-v4.html
 ```
 
-### Add Your Assets
-
-Before running, add these files to `/public`:
-
-```
-public/
-  photo.jpg                    ← your profile photo
-  resume-devasya-gupta.pdf     ← your resume PDF
-  og-image.png                 ← 1200×630px OG image (dark glass aesthetic)
-```
-
-The `About` section profile photo and resume download will work automatically once files are placed.
+That's it. Everything — images, resume PDF, fonts fallback, Three.js — is either embedded or loaded from CDN.
 
 ---
 
-## 🌐 Deploy to Vercel
-
-### Option A — Vercel CLI (Recommended)
+## Deploying to Vercel
 
 ```bash
 # Install Vercel CLI
 npm i -g vercel
 
 # Deploy from project directory
-vercel
-
-# Follow prompts:
-# - Set up and deploy? → Y
-# - Which scope? → your account
-# - Link to existing project? → N (first time)
-# - Project name: devasya-portfolio
-# - Directory: ./
-# - Override settings? → N
-
-# Production deploy
 vercel --prod
 ```
 
-### Option B — GitHub + Vercel Dashboard
+Or drag and drop `portfolio-v4.html` directly into [vercel.com/new](https://vercel.com/new) as a static file upload.
 
-1. Push this project to a GitHub repo:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: portfolio v2.0 initial commit"
-   git remote add origin https://github.com/devasyagupta/portfolio.git
-   git push -u origin main
-   ```
-
-2. Go to [vercel.com](https://vercel.com) → **New Project**
-
-3. Import your GitHub repo
-
-4. Vercel auto-detects Next.js — **click Deploy**
-
-5. Your site will be live at `https://devasya-portfolio.vercel.app`
-
-6. Add custom domain in Vercel Dashboard → Settings → Domains
+For Netlify: drag the file into [app.netlify.com/drop](https://app.netlify.com/drop).
 
 ---
 
-## ⚙️ Customization
+## Customization
 
-### Update Your Content
-All content lives in one file — `lib/data.ts`. Edit:
-- `personalInfo` — name, email, links
-- `projects` — add/remove/edit projects
-- `experiences` — work history
-- `certifications` — certs
-- `aboutBio` — bio text
+All content is hardcoded in the HTML. To update:
 
-### Update GitHub Metadata Bar
-The `TopMetaBar` currently shows static values. To fetch live commit counts:
-
-```tsx
-// In app/page.tsx, replace the static TopMetaBar with:
-import { fetchGitHubMeta } from '@/lib/github'
-
-// In a server component or API route:
-const meta = await fetchGitHubMeta('devasyagupta', 'portfolio')
-```
-
-### Add Profile Photo
-Replace the placeholder in `About.tsx`:
-```tsx
-// Find the placeholder div and replace with:
-import Image from 'next/image'
-<Image src="/photo.jpg" alt="Devasya Gupta" fill className="object-cover" />
-```
+| What | Where in the file |
+|------|-------------------|
+| Bio text | Search `word-reveal` `data-text=` attributes |
+| Project descriptions | Search `proj-desc` class |
+| GitHub links | Search `github.com/devasyagupta/` |
+| Email address | Search `GuptaDeva700@gmail.com` |
+| Resume PDF | Replace the `data:application/pdf;base64,...` in both resume button `href` attributes |
+| LinkedIn URL | Search `linkedin.com/in/devasya-gupta` |
 
 ---
 
-## 🎨 Design System
+## Contact
 
-All design tokens live in `app/globals.css` under `:root {}`.
-
-Key tokens:
-- `--bg-base: #07070F` — deep space background
-- `--accent-blue: #4F8EF7` — primary accent
-- `--glass-bg` / `--glass-border` — glass card system
-- `--chroma-r` / `--chroma-c` — chromatic aberration colors
-- `--tag-border-style: dashed` — edh.dev dashed pill style
+**Devasya Gupta**
+- Email: [GuptaDeva700@gmail.com](mailto:GuptaDeva700@gmail.com)
+- LinkedIn: [linkedin.com/in/devasya-gupta](https://linkedin.com/in/devasya-gupta)
+- GitHub: [github.com/devasyagupta](https://github.com/devasyagupta)
 
 ---
 
-## ♿ Accessibility
-
-- `prefers-reduced-motion` disables all animations
-- All interactive elements have `aria-label`s
-- Text passes WCAG AA contrast on glass backgrounds
-- Touch targets are minimum 44×44px on mobile
-- Three.js canvas has `pointer-events: none`
-
----
-
-## 📊 Performance Targets
-
-| Metric | Target |
-|--------|--------|
-| Lighthouse Performance | ≥ 90 |
-| LCP | < 2.5s |
-| CLS | < 0.1 |
-
-Three.js is lazy-loaded via `next/dynamic({ ssr: false })` and disabled on mobile.
-
----
-
-*Built with Next.js 14 · GSAP 3 · Framer Motion · React Three Fiber*
+*Actively seeking SWE and AI/ML internship opportunities — 2025/2026.*
