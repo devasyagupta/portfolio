@@ -14,7 +14,7 @@ A fully self-contained single HTML file portfolio with:
 - **Three.js wireframe globe** — low-poly icosphere with triangulated edges, glowing accent nodes, latitude/longitude rings, Earth-axial tilt, and mouse parallax
 - **Magazine-style layout** — asymmetric project cards with overlapping image/text columns
 - **11 scroll animations** — blur-fade reveals, heading wipes, image desaturate-zoom, word-by-word text, tag pill stagger, cert fan-in, project side-slides, separator line draws, scroll progress bar
-- **edh.dev layout DNA** — fixed left icon sidebar, fixed bottom-right text nav, top metadata bar
+  
 
 ---
 
